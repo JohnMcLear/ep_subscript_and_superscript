@@ -84,12 +84,6 @@ exports.aceAttribsToClasses = function(hook, context){
   }
 }
 
-// Block elements
-// I'm not sure if this is actually required..
-exports.aceRegisterBlockElements = function(){
-  return ["sub", "sup"];
-}
-
 // Register attributes that are html markup / blocks not just classes
 // This should make export export properly IE <sub>helllo</sub>world
 // will be the output and not <span class=sub>helllo</span>
