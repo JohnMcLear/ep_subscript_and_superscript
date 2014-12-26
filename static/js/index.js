@@ -40,7 +40,18 @@ exports.aceEditEvent = function(hook, call, cb){
     if(call.rep.selStart[1] === 0){
       // Attributes are never on the first line
       $('.subscript > a').removeClass('activeButton');
+      $('.superscript > a').removeClass('activeButton');
       return;
+    }
+    
+    // The line has an attribute set, this means it wont get hte correct X caret position
+    if(call.rep.selStart[1] === 1){
+      if(call.rep.alltext[0] === "*"){
+        // Attributes are never on the "first" character of lines with attributes
+        $('.subscript > a').removeClass('activeButton');
+        $('.superscript > a').removeClass('activeButton');
+        return;
+      }
     }
 
     // the caret is in a new position..  Let's do some funky shit
@@ -50,14 +61,7 @@ exports.aceEditEvent = function(hook, call, cb){
     }else{
       $('.subscript > a').removeClass('activeButton');
     }
-
-    // Attribtes are never available on the first X caret position so we need to ignore that
-    if(call.rep.selStart[1] === 0){
-      // Attributes are never on the first line
-      $('.superscript > a').removeClass('activeButton');
-      return;
-    }
-
+    
     // the caret is in a new position..  Let's do some funky shit
     if ( call.editorInfo.ace_getAttributeOnSelection("sup") ) {
       // show the button as being depressed..  Not sad, but active..
