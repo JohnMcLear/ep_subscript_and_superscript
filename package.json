@@ -2,6 +2,7 @@
   "description": "Add support for Subscript and Superscript",
   "name": "ep_subscript_and_superscript",
   "version": "0.0.1",
+  "license": "Apache-2.0",
   "author": {
     "name": "John McLear",
     "email": "john@mclear.co.uk"
@@ -9,5 +10,8 @@
   "dependencies": {},
   "engines": {
     "node": "*"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohnMcLear/ep_subscript_and_superscript.git"
 }
