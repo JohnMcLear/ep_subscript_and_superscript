@@ -1,7 +1,7 @@
 {
   "description": "Add support for Subscript and Superscript",
   "name": "ep_subscript_and_superscript",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "license": "Apache-2.0",
   "author": {
     "name": "John McLear",
